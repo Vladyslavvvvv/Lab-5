@@ -26,11 +26,15 @@ int main() {
     LinearEquation linear(linearA, linearB);
     QuadraticEquation quadratic(quadraticA, quadraticB, quadraticC);
 
+    // Using pointers to the base class
+    Equation* equation1 = &linear;
+    Equation* equation2 = &quadratic;
+
     cout << "\nLinear equation:\n";
-    linear.solve();
+    equation1->solve(); // Calls the solve method of LinearEquation
 
     cout << "\nQuadratic equation:\n";
-    quadratic.solve();
+    equation2->solve(); // Calls the solve method of QuadraticEquation
 
     return 0;
 }
